@@ -55,3 +55,16 @@ module full_adder_tb;
 
 endmodule
 
+
+// sample output
+/* 
+a=0 b=0 cin=0 | sum=0 cout=0
+a=0 b=0 cin=1 | sum=1 cout=0
+a=0 b=1 cin=0 | sum=1 cout=0
+a=0 b=1 cin=1 | sum=0 cout=1
+a=1 b=0 cin=0 | sum=1 cout=0
+a=1 b=0 cin=1 | sum=0 cout=1
+a=1 b=1 cin=0 | sum=0 cout=1
+a=1 b=1 cin=1 | sum=1 cout=1
+full_adder_tb.v:26: $finish called at 80 (1s)
+*/
