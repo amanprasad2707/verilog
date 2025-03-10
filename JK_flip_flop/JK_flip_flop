@@ -1,0 +1,68 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55ec838f25c0 .scope module, "JK_FF_tb" "JK_FF_tb" 2 1;
+ .timescale 0 0;
+v0x55ec83905bc0_0 .var "J", 0 0;
+v0x55ec83905c80_0 .var "K", 0 0;
+v0x55ec83905d50_0 .net "Q", 0 0, L_0x55ec839062e0;  1 drivers
+v0x55ec83905e50_0 .net "Qbar", 0 0, L_0x55ec839063a0;  1 drivers
+v0x55ec83905f20_0 .var "clk", 0 0;
+S_0x55ec838f2750 .scope module, "uut" "JK_FF" 2 6, 3 1 0, S_0x55ec838f25c0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "Q";
+    .port_info 1 /OUTPUT 1 "Qbar";
+    .port_info 2 /INPUT 1 "J";
+    .port_info 3 /INPUT 1 "K";
+    .port_info 4 /INPUT 1 "clk";
+L_0x55ec83906010 .functor NAND 1, v0x55ec83905bc0_0, v0x55ec83905f20_0, L_0x55ec839063a0, C4<1>;
+L_0x55ec839061d0 .functor NAND 1, v0x55ec83905c80_0, v0x55ec83905f20_0, L_0x55ec839062e0, C4<1>;
+L_0x55ec839062e0 .functor NAND 1, L_0x55ec83906010, L_0x55ec839063a0, C4<1>, C4<1>;
+L_0x55ec839063a0 .functor NAND 1, L_0x55ec839061d0, L_0x55ec839062e0, C4<1>, C4<1>;
+v0x55ec838b8490_0 .net "J", 0 0, v0x55ec83905bc0_0;  1 drivers
+v0x55ec83905640_0 .net "K", 0 0, v0x55ec83905c80_0;  1 drivers
+v0x55ec83905700_0 .net "Q", 0 0, L_0x55ec839062e0;  alias, 1 drivers
+v0x55ec839057d0_0 .net "Qbar", 0 0, L_0x55ec839063a0;  alias, 1 drivers
+v0x55ec83905890_0 .net "clk", 0 0, v0x55ec83905f20_0;  1 drivers
+v0x55ec839059a0_0 .net "w1", 0 0, L_0x55ec83906010;  1 drivers
+v0x55ec83905a60_0 .net "w2", 0 0, L_0x55ec839061d0;  1 drivers
+    .scope S_0x55ec838f25c0;
+T_0 ;
+    %vpi_call 2 13 "$monitor", "Time=%0t | J=%b K=%b CLK=%b | Q=%b Qbar=%b", $time, v0x55ec83905bc0_0, v0x55ec83905c80_0, v0x55ec83905f20_0, v0x55ec83905d50_0, v0x55ec83905e50_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ec83905f20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ec83905bc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ec83905c80_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ec83905bc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ec83905c80_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ec83905bc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ec83905c80_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ec83905bc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ec83905c80_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 23 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "JK_flip_flop_tb.v";
+    "JK_flip_flop.v";
