@@ -3,7 +3,7 @@
 // The second version explicitly defines intermediate wires for better readability and debugging.
 // Both produce the same sum and carry outputs.
 
-
+/*
 module full_adder (sum, cout, a, b, cin);
   input a, b, cin;
   output sum, cout;
@@ -11,7 +11,7 @@ module full_adder (sum, cout, a, b, cin);
   assign sum = a ^ b ^ cin;
   assign cout = (a & b) | (b & cin) | (a & cin);
 endmodule
-
+*/
 
 module full_adder (sum, cout, a, b, cin);
   input a, b, cin;

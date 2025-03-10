@@ -27,7 +27,7 @@ module full_adder_tb;
   end
 endmodule
 
-
+/*
 module full_adder_tb;
   reg a, b, cin;
   wire sum, cout;
@@ -54,7 +54,7 @@ module full_adder_tb;
   end
 
 endmodule
-
+*/
 
 // sample output
 /* 
