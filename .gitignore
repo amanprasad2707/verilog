@@ -1,1 +1,10 @@
-*. 
+*.
+# Ignore all files without an extension
+*./
+
+# Allow directories to be tracked (optional, only needed if you want to track empty folders)
+!*/
+
+# Example: If you also want to ignore specific hidden files (like `.DS_Store` on macOS)
+.DS_Store
+ 
