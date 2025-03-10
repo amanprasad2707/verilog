@@ -31,7 +31,7 @@ module decoder_4x16_tb;
 endmodule
 
 
-
+/*
 module decoder_4x16_tb;
   reg [3:0] i;       // 4-bit input
   reg en;            // Enable signal
@@ -59,7 +59,7 @@ module decoder_4x16_tb;
     $finish;
   end
 endmodule
-
+*/
 
 // sample output
 /* 
