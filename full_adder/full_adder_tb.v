@@ -27,8 +27,8 @@ module full_adder_tb;
   end
 endmodule
 
-/*
-module full_adder_tb;
+
+/* module full_adder_tb;
   reg a, b, cin;
   wire sum, cout;
   
@@ -43,18 +43,13 @@ module full_adder_tb;
     a = 1; b = 0; cin = 1; #10;
     a = 1; b = 1; cin = 0; #10;
     a = 1; b = 1; cin = 1; #10;
+    #10 $finish;  // Fix the delay to match simulation time
   end
 
-  initial begin
-    $monitor("a=%b b=%b cin=%b | sum=%b cout=%b", a, b, cin, sum, cout);
-  end
-  
-  initial begin
-    #80 $finish;  // Fix the delay to match simulation time
-  end
+  initial $monitor("a=%b b=%b cin=%b | sum=%b cout=%b", a, b, cin, sum, cout);
 
-endmodule
-*/
+endmodule */
+
 
 // sample output
 /* 
