@@ -1,11 +1,15 @@
+
 module JK_FF(Q, Qbar, J, K, clk);
   input J, K, clk;
-  output Q, Qbar;
-  wire w1, w2;
+  output reg Q, Qbar;  // Use 'reg' to hold state
 
-  nand(w1, J, clk, Qbar);  // J input control
-  nand(w2, K, clk, Q);     // K input control
-  nand(Q, w1, Qbar);       // Final Q output
-  nand(Qbar, w2, Q);       // Final Qbar output
-
+  always @(posedge clk) begin
+    case ({J, K})
+      2'b00: Q <= Q;        // Hold state
+      2'b01: Q <= 0;        // Reset
+      2'b10: Q <= 1;        // Set
+      2'b11: Q <= ~Q;       // Toggle
+    endcase
+    Qbar <= ~Q;  // Qbar is always complement of Q
+  end
 endmodule
